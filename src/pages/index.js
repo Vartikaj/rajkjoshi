@@ -29,7 +29,7 @@ export default function Home() {
             <div class="w-1/2 flex flex-col items-center self-center">
               <h1></h1>
               <AnimatedText text = "Astrophotography Adventures: Capturing the Wonders of the Cosmos." className="!text-5xl text-left" />
-              <p className='my-4 text-base font-medium'>Welcome to my astrophotography portfolio, where I capture the ethereal beauty of celestial objects. Join me on a visual journey through the mysteries of space, revealing the wonders that await us in the night sky. Let's unveil the secrets of the universe, one captivating photograph at a time.</p>
+              <p className='my-4 text-base font-medium'>Welcome to my astrophotography portfolio, where I capture the ethereal beauty of celestial objects. Join me on a visual journey through the mysteries of space, revealing the wonders that await us in the night sky. Let unveil the secrets of the universe, one captivating photograph at a time.</p>
               <div className = "flex items-center self-start mt-2">
                 <Link href="/dummy.pdf" target={"_blank"} className="flex items-center bg-dark text-light p-1.5 px-5 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-dark hover:bg-light hover:text-dark mr-3" download = {true}>Resume <LinkArrow className={"w-6 ml-1"}/>
                 </Link>
