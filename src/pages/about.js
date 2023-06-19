@@ -8,6 +8,7 @@ import profilePic from "../../public/images/profile/raj.jpg";
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Skills from './Skills'
 import Experience from './Experience'
+import Education from './Education'
 
 const AnimatedNumbers = ({value}) => {
     const ref = useRef(null);
@@ -40,7 +41,7 @@ const about = () => {
         <Head>
             <title>Rajkjoshi | About</title>
             <meta name = "description" content = "Discover the mesmerizing convergence of nature and the cosmos in AstroMoors, a stunning collection of astrophotography capturing the ethereal beauty of celestial objects against the backdrop of serene moorland landscapes."></meta>
-            <meta name = "keyword" content = "astrophotography, celestial objects, moorland landscapes, convergence, nature, cosmos, ethereal beauty"></meta>
+            <meta name = "keyword" content = "Raj Kishor Joshi, Raj, Joshi, astrophotography, celestial objects, moorland landscapes, convergence, nature, cosmos, ethereal beauty"></meta>
         </Head>
         <main className='flex w-full flex-col items-center justify-center'>
             <Layout className='pt-16 pb-16'>
@@ -79,7 +80,9 @@ const about = () => {
                 </div>
                 <Skills />
 
-                <Experience ></Experience>
+                <Experience />
+                <Education />
+
             </Layout>
             
         </main>

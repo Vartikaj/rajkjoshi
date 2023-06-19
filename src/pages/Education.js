@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import {motion, useScroll} from "framer-motion"
 import LiIcon from './LiIcon'
 
-const Details = ({position, company, companyLink, time, address, work}) => {
+const Details = ({type, time, place, info}) => {
     const ref = useRef(null);
     return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
         <LiIcon reference = {ref}/>
@@ -11,18 +11,18 @@ const Details = ({position, company, companyLink, time, address, work}) => {
             whileInView = {{y:0}}
             transition= {{duration:0.5, type:"spring"}}
         >
-            <h3 className='capitalize font-bold text-2xl'>{position}&nbsp;<a href={companyLink} target="_blank" className='text-primary capitalize'>@{company}</a></h3>
+            <h3 className='capitalize font-bold text-2xl'>{type}&nbsp;</h3>
             <span className='capitalize font-medium text-dark/75 '>
-                {time} | {address}
+                {time} | {place}
             </span>
             <p className='font-medium w-full'>
-                {work}
+                {info}
             </p>
         </motion.div>
     </li>
 }
 
-const Experience = () => {
+const Education = () => {
     const ref = useRef(null);
     const {scrollYProgress} = useScroll(
         {
@@ -32,15 +32,17 @@ const Experience = () => {
     )
   return (
     <div className='my-44'>
-        <h2 className='font-bold text-6xl mb-20 w-full text-center'>Experience</h2>
+        <h2 className='font-bold text-6xl mb-20 w-full text-center'>Education</h2>
         <div ref={ref} className='w-[75] mx-auto relative'>
             <motion.div style={{scaleY: scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top' />
             <ul className='w-full flex flex-col items-start justify-between ml-4'>
-                <Details position = "Senior Research Fellow" company = "Aryabhatta Research Institute of Observational SciencEs" companyLink= "https://www.aries.res.in" time="2018 | Present" address = "Manora Peak, Nainital, 263001" work = "Numerical Simulation of Astrophysical Flows around Compact Objects"/>
+                <Details type = "Bachelor of Science" time="2012-2015" place = "Delhi University" info = "Delhi University's B.Sc department offers a wide range of science specializations, providing a rigorous curriculum with theoretical and practical aspects of study. Graduates have opportunities for higher studies, research, and employment in various industries, research organizations, and educational institutions."/>
+
+                <Details type = "Masters of Physics" time="2015-2017" place = "Delhi University" info = "Delhi University's B.Sc department offers a wide range of science specializations, providing a rigorous curriculum with theoretical and practical aspects of study. Graduates have opportunities for higher studies, research, and employment in various industries, research organizations, and educational institutions."/>
             </ul>
         </div>
     </div>
   )
 }
 
-export default Experience
+export default Education
