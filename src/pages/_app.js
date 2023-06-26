@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
     //DECLARING THE FONTS...
 
     //ALWAYS AFTER CREATING A COMPONENT IMPORT IT...
-    <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen`}>
+    <main className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}>
       <NavBar />
       <Component {...pageProps} />
       <Footer />

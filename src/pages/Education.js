@@ -12,7 +12,7 @@ const Details = ({type, time, place, info}) => {
             transition= {{duration:0.5, type:"spring"}}
         >
             <h3 className='capitalize font-bold text-2xl'>{type}&nbsp;</h3>
-            <span className='capitalize font-medium text-dark/75 '>
+            <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
                 {time} | {place}
             </span>
             <p className='font-medium w-full'>
@@ -34,7 +34,7 @@ const Education = () => {
     <div className='my-44'>
         <h2 className='font-bold text-6xl mb-20 w-full text-center'>Education</h2>
         <div ref={ref} className='w-[75] mx-auto relative'>
-            <motion.div style={{scaleY: scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top' />
+            <motion.div style={{scaleY: scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light'/>
             <ul className='w-full flex flex-col items-start justify-between ml-4'>
                 <Details type = "Bachelor of Science" time="2012-2015" place = "Delhi University" info = "Delhi University's B.Sc department offers a wide range of science specializations, providing a rigorous curriculum with theoretical and practical aspects of study. Graduates have opportunities for higher studies, research, and employment in various industries, research organizations, and educational institutions."/>
 

@@ -1,9 +1,10 @@
 import Logo from './Logo';
 import Link from 'next/link'
-import {TwitterIcon, GithubIcon, LinkedInIcon, PinterestIcon, MoonIcon} from './Icons';
+import {TwitterIcon, GithubIcon, LinkedInIcon, PinterestIcon, MoonIcon, SunIcon} from './Icons';
 import { useRouter } from 'next/router';
 import React from 'react';
 import {motion} from "framer-motion";
+import useThemeSwitcher from './hooks/useThemeSwitcher';
 
 /**
  * 
@@ -15,13 +16,14 @@ const CoustomLink = ({href, title, className}) => {
         <Link href={href} className={`${className} relative group` } >
             {title}
             <span className={`h-[1px] inline-block left-0 -bottom-0 bg-dark absolute group-hover:w-full transition-[width] ease duration-300
-            ${router.asPath === href ? 'w-full' : 'w-0'}`}>&nbsp;</span>
+            ${router.asPath === href ? 'w-full' : 'w-0'} dark:bg-light`}>&nbsp;</span>
         </Link>
     )
 }
 const NavBar = () => {
+    const [mode, setMode] = useThemeSwitcher();
   return (
-    <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+    <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'>
         <nav>
             <CoustomLink href="/" title="Home" className = "mr-4" />
             <CoustomLink href="/about" title="About" className = "mx-4" />
@@ -58,6 +60,19 @@ const NavBar = () => {
             }}>
                 <PinterestIcon />
             </motion.a>
+
+            <button 
+                onClick = {() => setMode(mode === "light" ? "dark" : "light")}
+                className={`ml-3 flex items-center justify-center rounded-full p-1
+                ${mode === "dark" ? "bg-light text-dark" : "bg-dark text-light"}
+                `}
+            >
+                {
+                    mode === "dark" ?
+                        <SunIcon className={"fill-dark"} />
+                        : <MoonIcon className={"fill-light"} />
+                }
+            </button>
             {/* <a href="/" target={"_blank"} className="ml-2">
                 <MoonIcon />
             </a> */}
