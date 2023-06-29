@@ -21,19 +21,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex item-center text-dark dark:text-light w-full">
-        <Layout className="pt-0">
-          <div className="flex items-center justify-between w-full">
-            <div className="w-1/2">
-              <Image src={profilePic} alt="Astronomer" className="h-auto w-full"/>
+        <Layout className="pt-0 md:pt-16 sm:pt-8">
+          <div className="flex items-center justify-between w-full lg:flex-col">
+            <div className="w-1/2 md:w-full">
+              <Image src={profilePic} alt="Astronomer" className="h-auto w-full lg:hidden md:inline-block md:w-full"
+                priority
+                sizes='(max-width:768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw'
+              />
             </div>
-            <div class="w-1/2 flex flex-col items-center self-center">
+            <div class="w-1/2 flex flex-col items-center self-center lg:w-full">
               <h1></h1>
-              <AnimatedText text = "Astrophotography Adventures: Capturing the Wonders of the Cosmos." className="!text-5xl text-left dark:text-light" />
-              <p className='my-4 text-base font-medium'>Welcome to my astrophotography portfolio, where I capture the ethereal beauty of celestial objects. Join me on a visual journey through the mysteries of space, revealing the wonders that await us in the night sky. Let unveil the secrets of the universe, one captivating photograph at a time.</p>
-              <div className = "flex items-center self-start mt-2">
-                <Link href="/dummy.pdf" target={"_blank"} className="flex items-center bg-dark text-light p-1.5 px-5 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-dark hover:bg-light hover:text-dark mr-3 dark:bg-light dark:text-dark hover:dark:border-light hover:dark:bg-dark hover:dark:text-light" download = {true}>Resume <LinkArrow className={"w-6 ml-1"}/>
+              <AnimatedText text = "Astrophotography Adventures: Capturing the Wonders of the Cosmos." className="!text-5xl text-left dark:text-light xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl break-all" />
+              <p className='my-4 text-base font-medium lg:text-center md:text-sm sm:text-xs'>Welcome to my astrophotography portfolio, where I capture the ethereal beauty of celestial objects. Join me on a visual journey through the mysteries of space, revealing the wonders that await us in the night sky. Let unveil the secrets of the universe, one captivating photograph at a time.</p>
+              <div className = "flex items-center self-start mt-2 lg:self-center">
+                <Link href="/dummy.pdf" target={"_blank"} className="flex items-center bg-dark text-light p-1.5 px-5 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-dark hover:bg-light hover:text-dark mr-3 dark:bg-light dark:text-dark hover:dark:border-light hover:dark:bg-dark hover:dark:text-light md:p-2 md:px-4 md:text-base md:text-[14px]" download = {true}>Resume <LinkArrow className={"w-6 ml-1"}/>
                 </Link>
-                <Link href="mailto:abc@gmail.com" target="{_blank}" className="flex items-center bg-light text-dark p-1.5 px-5 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-dark hover:bg-dark hover:text-light dark:bg-dark dark:text-light hover:dark:border-light hover:dark:bg-light hover:dark:text-dark">Contact</Link>
+                <Link href="mailto:abc@gmail.com" target="{_blank}" className="flex items-center bg-light text-dark p-1.5 px-5 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-dark hover:bg-dark hover:text-light dark:bg-dark dark:text-light hover:dark:border-light hover:dark:bg-light hover:dark:text-dark md:p-2 md:px-4 md:text-base md:text-[14px]">Contact</Link>
                 <HireMe />
               </div>
             </div>

@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <footer className='w-full border-t-2 border-solid border-dark text-lg font-medium text-dark dark:border-light bg-light dark:bg-dark'>
-            <Layout className='!py-2 flex items-center justify-between dark:text-light'>
+    <footer className='w-full border-t-2 border-solid border-dark text-lg font-medium text-dark dark:border-light bg-light dark:bg-dark md:text-[15px] md:self-center'>
+            <Layout className='!py-2 flex items-center justify-between dark:text-light md:self-center md:justify-center'>
                 <span className='text-0.5xl'>{new Date().getFullYear()} &copy; All Rights Reserved</span>
             </Layout>
     </footer>
